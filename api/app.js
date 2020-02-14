@@ -22,7 +22,7 @@ app.get(`${uri}/genres`, function(req,res){
 });
 
 app.post(`${uri}/genres`, function(req,res){
-    var genre = req.body;
+    let genre = req.body;
     Genre.addGenre(genre ,function(err, genre){
         if(err){
             throw err;
@@ -76,7 +76,7 @@ app.get(`${uri}/books/:_id`, function(req,res){
 });
 
 app.post(`${uri}/books`, function(req,res){
-    var book = req.body;
+    let book = req.body;
     if(!book.author || !book.title || !book.genre){
         return res.status(404).send('"author","title", and "genre" required!')
     }
